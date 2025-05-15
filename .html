@@ -1,4 +1,119 @@
-<!DOCTYPE html>
+<style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #343a40;
+            --accent: #17a2b8;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #28a745;
+            --danger: #dc3545;
+            --warning: #ffc107;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--primary);
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-left: 10px;
+        }
+        
+        .logo-icon {
+            font-size: 28px;
+            color: var(--primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -831,6 +946,193 @@
         </div>
     </section>
 
+    <!-- Packages Section -->
+    <section class="packages" id="packages" style="padding: 80px 0; background-color: var(--white);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Service Packages</h2>
+                <p>Choose the perfect plan for your home or business needs with our flexible service packages.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <!-- Basic Package -->
+                <div style="background-color: var(--light); border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); transition: transform 0.3s, box-shadow 0.3s; text-align: center;">
+                    <div style="background-color: var(--secondary); color: var(--white); padding: 20px 0;">
+                        <h3>Home Basic</h3>
+                        <div style="font-size: 36px; font-weight: 700; margin: 15px 0;">$79<span style="font-size: 16px; font-weight: 400;">/visit</span></div>
+                    </div>
+                    <div style="padding: 30px 20px;">
+                        <ul style="list-style: none; text-align: left; margin-bottom: 30px;">
+                            <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+                                <span style="color: var(--success); margin-right: 10px;">✓</span> Computer diagnostics & repair
+                            </li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+                                <span style="color: var(--success); margin-right: 10px;">✓</span> Virus & malware removal
+                            </li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+                                <span style="color: var(--success); margin-right: 10px;">✓</span> Software installation
+                            </li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+                                <span style="color: var(--success); margin-right: 10px;">✓</span> Basic network setup
+                            </li>
+                            <li style="padding: 10px 0; display: flex; align-items: center;">
+                                <span style="color: var(--danger); margin-right: 10px;">×</span> <span style="color: #999;">Remote support</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="btn" style="background-color: var(--secondary); color: var(--white); display: inline-block; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: all 0.3s;">Select Plan</a>
+                    </div>
+                </div>
+                
+                <!-- Standard Package -->
+                <div style="background-color: var(--light); border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); transition: transform 0.3s, box-shadow 0.3s; text-align: center; transform: scale(1.05);">
+                    <div style="background-color: var(--primary); color: var(--white); padding: 20px 0; position: relative;">
+                        <span style="position: absolute; top: -15px; right: -15px; background-color: var(--warning); color: var(--dark); font-size: 14px; font-weight: 600; padding: 5px 15px; border-radius: 20px;">POPULAR</span>
+                        <h3>Business Pro</h3>
+                        <div style="font-size: 36px; font-weight: 700; margin: 15px 0;">$199<span style="font-size: 16px; font-weight: 400;">/month</span></div>
+                    </div>
+                    <div style="padding: 30px 20px;">
+                        <ul style="list-style: none; text-align: left; margin-bottom: 30px;">
+                            <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+                                <span style="color: var(--success); margin-right: 10px;">✓</span> <strong>Unlimited</strong> IT support
+                            </li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+                                <span style="color: var(--success); margin-right: 10px;">✓</span> Network monitoring & management
+                            </li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+                                <span style="color: var(--success); margin-right: 10px;">✓</span> Cloud backup solutions
+                            </li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+                                <span style="color: var(--success); margin-right: 10px;">✓</span> Security updates & patches
+                            </li>
+                            <li style="padding: 10px 0; display: flex; align-items: center;">
+                                <span style="color: var(--success); margin-right: 10px;">✓</span> Priority response (4hr guaranteed)
+                            </li>
+                        </ul>
+                        <a href="#contact" class="btn" style="background-color: var(--primary); color: var(--white); display: inline-block; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: all 0.3s;">Select Plan</a>
+                    </div>
+                </div>
+                
+                <!-- Premium Package -->
+                <div style="background-color: var(--light); border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); transition: transform 0.3s, box-shadow 0.3s; text-align: center;">
+                    <div style="background-color: var(--accent); color: var(--white); padding: 20px 0;">
+                        <h3>Enterprise Solution</h3>
+                        <div style="font-size: 36px; font-weight: 700; margin: 15px 0;">Custom<span style="font-size: 16px; font-weight: 400;"> pricing</span></div>
+                    </div>
+                    <div style="padding: 30px 20px;">
+                        <ul style="list-style: none; text-align: left; margin-bottom: 30px;">
+                            <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+                                <span style="color: var(--success); margin-right: 10px;">✓</span> All Business Pro features
+                            </li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+                                <span style="color: var(--success); margin-right: 10px;">✓</span> Dedicated IT technician
+                            </li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+                                <span style="color: var(--success); margin-right: 10px;">✓</span> Security camera systems
+                            </li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+                                <span style="color: var(--success); margin-right: 10px;">✓</span> Custom software solutions
+                            </li>
+                            <li style="padding: 10px 0; display: flex; align-items: center;">
+                                <span style="color: var(--success); margin-right: 10px;">✓</span> 24/7 emergency support
+                            </li>
+                        </ul>
+                        <a href="#contact" class="btn" style="background-color: var(--accent); color: var(--white); display: inline-block; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: all 0.3s;">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="faq" id="faq" style="padding: 80px 0; background-color: var(--light);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our services and solutions.</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="margin-bottom: 20px; background-color: var(--white); border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                    <div class="faq-question" style="padding: 20px; background-color: var(--primary); color: var(--white); font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        <span>What types of computer problems can you fix?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer" style="padding: 0; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="padding: 20px;">
+                            <p>We can diagnose and repair a wide range of computer issues, including:</p>
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Hardware failures (motherboards, hard drives, power supplies)</li>
+                                <li>Software problems and operating system issues</li>
+                                <li>Virus and malware removal</li>
+                                <li>Data recovery</li>
+                                <li>Network connectivity problems</li>
+                                <li>Slow computer performance</li>
+                                <li>Screen and display problems</li>
+                                <li>Upgrade installations (memory, storage, graphics cards)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 20px; background-color: var(--white); border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                    <div class="faq-question" style="padding: 20px; background-color: var(--primary); color: var(--white); font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        <span>Do you offer on-site services or do I need to bring my devices to you?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer" style="padding: 0; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="padding: 20px;">
+                            <p>We offer both options! We provide convenient on-site services for businesses and homes within our service area. For more complex repairs or diagnostics, we may recommend bringing your device to our shop where we have specialized equipment. We also offer remote support for many software and configuration issues, allowing us to resolve problems quickly without a visit.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 20px; background-color: var(--white); border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                    <div class="faq-question" style="padding: 20px; background-color: var(--primary); color: var(--white); font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        <span>What types of security camera systems do you install?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer" style="padding: 0; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="padding: 20px;">
+                            <p>We install a variety of security camera systems tailored to your specific needs and budget. Our offerings include:</p>
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>IP camera systems with remote viewing capabilities</li>
+                                <li>Wireless and wired camera installations</li>
+                                <li>HD and 4K resolution cameras</li>
+                                <li>Indoor and outdoor weatherproof cameras</li>
+                                <li>Night vision and motion detection systems</li>
+                                <li>Cloud storage and local DVR/NVR recording options</li>
+                                <li>Multi-camera systems for complete coverage</li>
+                                <li>Integration with existing security systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 20px; background-color: var(--white); border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                    <div class="faq-question" style="padding: 20px; background-color: var(--primary); color: var(--white); font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        <span>How quickly can you respond to IT emergencies?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer" style="padding: 0; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="padding: 20px;">
+                            <p>Our response time depends on your service plan and the severity of the issue. Business Pro clients receive guaranteed 4-hour response times during business hours. Enterprise Solution clients have access to 24/7 emergency support. For standard service calls, we typically respond within 24-48 hours. We always prioritize critical issues that impact business operations or security.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 20px; background-color: var(--white); border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                    <div class="faq-question" style="padding: 20px; background-color: var(--primary); color: var(--white); font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        <span>Do you offer any warranties on your services?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer" style="padding: 0; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="padding: 20px;">
+                            <p>Yes, we stand behind our work with solid warranties. All repair services come with a 90-day warranty on labor. Hardware that we supply and install includes the manufacturer's warranty (typically 1-3 years depending on the product). Our installations (networks, camera systems, etc.) are warranted for 1 year against defects in workmanship. Monthly service plans include continuous support for covered services for as long as your subscription remains active.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
@@ -885,6 +1187,177 @@
                     </div>
                     <div class="social-links">
                         <a href="#" class="social-link">fb</a>
+                        <a href="#" class="social-link">tw</a>
+                        <a href="#" class="social-link">in</a>
+                        <a href="#" class="social-link">yt</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Computer & IT Repair</a></li>
+                        <li><a href="#">Business IT Installation</a></li>
+                        <li><a href="#">Security Camera Systems</a></li>
+                        <li><a href="#">Networking Solutions</a></li>
+                        <li><a href="#">Cybersecurity Services</a></li>
+                        <li><a href="#">Cloud Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest tech tips and special offers.</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <button type="submit" class="btn btn-submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 TechPro Solutions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for interactive elements -->
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (window.innerWidth < 768) {
+                        document.querySelector('nav ul').style.display = 'none';
+                    }
+                }
+            });
+        });
+
+        // Form submission handler with validation
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Basic validation
+                let isValid = true;
+                const requiredFields = form.querySelectorAll('[required]');
+                
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.style.borderColor = 'var(--danger)';
+                    } else {
+                        field.style.borderColor = '';
+                    }
+                });
+                
+                if (isValid) {
+                    // Show success message (in real site, this would submit to server)
+                    const successMessage = document.createElement('div');
+                    successMessage.style.padding = '15px';
+                    successMessage.style.marginTop = '15px';
+                    successMessage.style.backgroundColor = 'var(--success)';
+                    successMessage.style.color = 'white';
+                    successMessage.style.borderRadius = '5px';
+                    successMessage.textContent = 'Thank you! Your message has been sent successfully.';
+                    
+                    form.appendChild(successMessage);
+                    form.reset();
+                    
+                    // Remove success message after 3 seconds
+                    setTimeout(() => {
+                        successMessage.remove();
+                    }, 3000);
+                }
+            });
+        });
+
+        // FAQ accordion functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                // Toggle active class on the question
+                this.classList.toggle('active');
+                
+                // Get the answer element
+                const answer = this.nextElementSibling;
+                
+                // Toggle the plus/minus icon
+                const icon = this.querySelector('.faq-icon');
+                
+                // Toggle the height of the answer
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                    answer.style.padding = '0';
+                    if (icon) icon.textContent = '+';
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + 40 + 'px'; // Add padding
+                    answer.style.padding = '20px';
+                    if (icon) icon.textContent = '−';
+                }
+            });
+        });
+
+        // Create an intersection observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        // Apply animations on scroll
+        window.addEventListener('DOMContentLoaded', () => {
+            // Add animation classes to elements
+            const animateElements = document.querySelectorAll('.service-card, .testimonial-card, .stat');
+            
+            animateElements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                element.style.transitionDelay = (index % 3) * 0.1 + 's';
+            });
+            
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>        <a href="#" class="social-link">fb</a>
                         <a href="#" class="social-link">tw</a>
                         <a href="#" class="social-link">in</a>
                         <a href="#" class="social-link">yt</a>
